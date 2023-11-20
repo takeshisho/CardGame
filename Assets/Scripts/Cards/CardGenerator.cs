@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class CardGenerator : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    // notionに説明あり。public CardクラスのcardPrefabsという変数生成
+    [SerializeField] Card cardPrefabs;
+
+    private void Start(){
+        for (int i = 0; i < 8; i++) {
+            Spawn();
+        }
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    // generate card
+    public void Spawn() {
+        Instantiate(cardPrefabs);
     }
 }
