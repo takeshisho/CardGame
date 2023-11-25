@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Healslime
   type: 3
-  number: 0
+  number: 1
   icon: {fileID: 21300000, guid: 3cfa40cbb07244842abb7f47e6889ad4, type: 3}
   description: "if enemy is Prestidigitator, \nyou win !!"

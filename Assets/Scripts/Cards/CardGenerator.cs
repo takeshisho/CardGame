@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class CardGenerator : MonoBehaviour
 {
-    // notionに説明あり。public CardクラスのcardPrefabsという変数生成
+    // notionに説明あり。public CardクラスのcardPrefabsという変数生成 初期値代入はinspectorでやる。
     [SerializeField] Card cardPrefabs;
+    [SerializeField] CardBase[] cardBases;
 
-    private void Start(){
-        for (int i = 0; i < 8; i++) {
-            Spawn();
-        }
-        
-    }
 
-    // generate card
-    public void Spawn() {
-        Instantiate(cardPrefabs);
+    public Card Spawn(int num) {
+
+        // generate card
+        Card card = Instantiate(cardPrefabs);
+
+        // CardクラスのSet関数により、CardBasesのnum番目の情報をセットする。
+        card.Set(cardBases[num]);
+        return card;
     }
 }

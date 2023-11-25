@@ -13,7 +13,8 @@ public class CardBase : ScriptableObject
     [TextArea]
     [SerializeField] string description;
 
-    public string Name { get => name; }
+    // CardBaseクラスの中の上の変数を外から扱えるようにするためのプロパティ
+    public string Name { get => name; } 
     public CardType Type { get => type; }
     public int Number { get => number; }
     public Sprite Icon { get => icon; }
