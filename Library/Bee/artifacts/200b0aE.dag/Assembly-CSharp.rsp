@@ -378,6 +378,9 @@
 "Assets/Scripts/Cards/CardBase.cs"
 "Assets/Scripts/Cards/CardGenerator.cs"
 "Assets/Scripts/GameMaster.cs"
+"Assets/Scripts/GameUI.cs"
+"Assets/Scripts/RuleBook.cs"
+"Assets/Scripts/Title/TitleManager.cs"
 -langversion:9.0
 
 /deterministic

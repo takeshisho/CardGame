@@ -9,9 +9,15 @@ public class Battler : MonoBehaviour
     [SerializeField] SubmitPosition submitPosition;
     public UnityAction OnSubmitAction;
 
-    // プロパティ
-    public bool IsSubmitted { get; private set;}
-    public BattlerHand Hand {get => hand;}
+    // プロパティ boolは何も代入しないと初期値false
+    public bool IsSubmitted { get; private set; }
+    public bool IsFirstSubmit{ get;  set; }
+    public bool IsAddingNumberEffect{ get; set; }
+    public int AddNumber{ get; private set; }
+    public BattlerHand Hand { get => hand; }
+    // submitPositionのプロパティであるSubmitCard
+    public Card SubmitCard { get => submitPosition.SubmitCard; }
+    public int Life{ get; set; }
 
     public void SetCardToHand(Card card)
     {
@@ -42,5 +48,26 @@ public class Battler : MonoBehaviour
             OnSubmitAction?.Invoke();
         }
 
+    }
+
+    public void RandomSubmit()
+    {
+        // 手札からランダムでカードを抜き取る
+        Card card = hand.RandomRemove();
+        // 提出用にセット
+        submitPosition.Set(card);
+        hand.ResetPosition();
+        // 提出をGameMasterに通知
+        IsSubmitted = true;
+        OnSubmitAction?.Invoke();
+    }
+
+    public void SetupNextTurn()
+    {
+        IsSubmitted = false;
+        submitPosition.DeleteCard();
+        if (IsAddingNumberEffect) AddNumber = 2;
+        else AddNumber = 0;
+        IsAddingNumberEffect = false;
     }
 }

@@ -18,4 +18,12 @@ public class SubmitPosition : MonoBehaviour
         // cardの位置をsubmitpositionの位置と同じにしている。
         card.transform.position = transform.position;
     }
+
+    public void DeleteCard()
+    {
+        // 消したいのはcomponentではなくて、gameobjectなのでsubmitCardだけではダメ
+        Destroy(submitCard.gameObject);
+        // コンポーネントも空にしておく
+        submitCard = null;
+    }
 }

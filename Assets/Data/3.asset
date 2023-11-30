@@ -16,4 +16,4 @@ MonoBehaviour:
   type: 6
   number: 3
   icon: {fileID: 21300000, guid: 6a0d193d6fb814705b7894579ce75fc7, type: 3}
-  description: Card is invalid
+  description: 'Number reversal: invalid for the prince'

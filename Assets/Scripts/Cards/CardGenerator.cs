@@ -9,13 +9,13 @@ public class CardGenerator : MonoBehaviour
     [SerializeField] CardBase[] cardBases;
 
 
-    public Card Spawn(int num) {
+    public Card Spawn(int num, bool isEnemy) {
 
         // generate card
         Card card = Instantiate(cardPrefabs);
 
         // CardクラスのSet関数により、CardBasesのnum番目の情報をセットする。
-        card.Set(cardBases[num]);
+        card.Set(cardBases[num], isEnemy);
         return card;
     }
 }

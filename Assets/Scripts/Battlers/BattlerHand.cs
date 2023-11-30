@@ -5,7 +5,8 @@ using UnityEngine;
 public class BattlerHand : MonoBehaviour
 {
     // リストの生成<>の中はリストの要素の型名
-    List<Card> list = new List<Card>();
+    public List<Card> list = new List<Card>();
+    // public List<Card> List_get{ get; private set; }
 
     public void Add(Card card)
     {
@@ -26,9 +27,18 @@ public class BattlerHand : MonoBehaviour
         list.Sort((card0, card1) => card0.Base.Number - card1.Base.Number);
         for (int i = 0; i < list.Count; i++)
         {
-            float posX = (i - list.Count / 2f) * 1.8f;
+            float posX = (i - list.Count / 2f) * 1.5f;
             // クラスからインスタンスを生成するときは、new 型名（引数）
             list[i].transform.localPosition = new Vector3(posX, 0);
         }
+    }
+
+    public Card RandomRemove()
+    {
+        int r = Random.Range(0, list.Count);
+        Card card = list[r];
+        Remove(card);
+        return card;
+
     }
 }

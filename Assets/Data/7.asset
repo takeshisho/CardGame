@@ -16,4 +16,4 @@ MonoBehaviour:
   type: 1
   number: 7
   icon: {fileID: 21300000, guid: bf6644992772144af8939ba45677cb9c, type: 3}
-  description: If you're a princess, you lose the game.
+  description: If enemy is a Healslime, you lose the game.
