@@ -96,6 +96,7 @@ public class GameMaster : MonoBehaviour
                 break;
 
             case RuleBook.Result.TurnDraw:
+            case RuleBook.Result.GameDraw:
                 gameUI.ShowTurnResult("DRAW");
                 break;
 
