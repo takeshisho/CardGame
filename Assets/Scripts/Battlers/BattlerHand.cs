@@ -6,7 +6,8 @@ public class BattlerHand : MonoBehaviour
 {
     // リストの生成<>の中はリストの要素の型名
     public List<Card> list = new List<Card>();
-    // public List<Card> List_get{ get; private set; }
+
+    public bool Isempty { get => list.Count == 0; }
 
     public void Add(Card card)
     {

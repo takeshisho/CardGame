@@ -22,7 +22,7 @@ public class RuleBook : MonoBehaviour
         CardType enemy_card_type = enemy.SubmitCard.Base.Type;
 
         // カードがなくなったらDRAWにするようにした。残りのlife数で勝敗決めるのもあり。
-        if (player.Hand.list.Count <= 0 || enemy.Hand.list.Count <= 0){
+        if (player.Hand.Isempty || enemy.Hand.Isempty ){
             return Result.GameDraw;
         }
             

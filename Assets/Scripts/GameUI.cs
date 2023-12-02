@@ -10,13 +10,23 @@ public class GameUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI enemyLifeText;
     [SerializeField] GameObject resultPanel;
     [SerializeField] TextMeshProUGUI resultText;
-
+    [SerializeField] GameObject playerAddNumberObj;
+    [SerializeField] GameObject enemyAddNumberObj;
     // これは自作関数であり、Startみたいに元々用意されているものではない。
     public void Init()
     {
         turnResultText.gameObject.SetActive(false);
         resultPanel.gameObject.SetActive(false);
     }
+
+    public void ShowAddNumber(int playerAddNumber, int enemyAddNumber)
+    {
+        if (playerAddNumber == 2) playerAddNumberObj.SetActive(true);
+        else playerAddNumberObj.SetActive(false);
+
+        if (enemyAddNumber == 2) enemyAddNumberObj.SetActive(true);
+        else enemyAddNumberObj.SetActive(false);
+    }   
 
     public void ShowLifes(int player_life, int enemy_life)
     {

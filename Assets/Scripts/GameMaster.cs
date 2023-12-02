@@ -33,6 +33,7 @@ public class GameMaster : MonoBehaviour
         player.Life = 4;
         enemy.Life = 4;
         gameUI.ShowLifes(player.Life, enemy.Life);
+        gameUI.ShowAddNumber(player.AddNumber, enemy.AddNumber);
         player.OnSubmitAction = SubmittedAction;
         enemy.OnSubmitAction = SubmittedAction;
         SendCardsto(player);
@@ -132,6 +133,7 @@ public class GameMaster : MonoBehaviour
         enemy.SetupNextTurn();
         submitButton.SetActive(true);
         gameUI.SetupNextTurn();
+        gameUI.ShowAddNumber(player.AddNumber, enemy.AddNumber);
         if (enemy.IsFirstSubmit) IsFirstSubmitEffect(enemy);
         if (player.IsFirstSubmit) IsFirstSubmitEffect(player);
     }
@@ -139,6 +141,7 @@ public class GameMaster : MonoBehaviour
     void IsFirstSubmitEffect(Battler battler)
     {
         battler.RandomSubmit();
+        battler.SubmitCard.Open();
         battler.IsFirstSubmit = false;
     }
 
