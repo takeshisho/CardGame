@@ -371,8 +371,16 @@
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"/Applications/Unity/Hub/Editor/2022.3.12f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"/Applications/Unity/Hub/Editor/2022.3.12f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
+"Assets/Scripts/Battlers/Battler.cs"
+"Assets/Scripts/Battlers/BattlerHand.cs"
+"Assets/Scripts/Battlers/SubmitPosition.cs"
 "Assets/Scripts/Cards/Card.cs"
+"Assets/Scripts/Cards/CardBase.cs"
 "Assets/Scripts/Cards/CardGenerator.cs"
+"Assets/Scripts/GameMaster.cs"
+"Assets/Scripts/GameUI.cs"
+"Assets/Scripts/RuleBook.cs"
+"Assets/Scripts/Title/TitleManager.cs"
 -langversion:9.0
 
 /deterministic
